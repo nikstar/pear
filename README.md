@@ -33,7 +33,7 @@ flask run
 
 ## Docker
 
-To run Pear with Docker.
+Run Pear with Docker:
 
 ```sh
 docker run -p 5000:5000 -e APP_ROOT=/myapp -v /path/to/data:/data nikstar/pear:latest
