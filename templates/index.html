@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>🍐 {{ folder }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>🍐 {{ folder }}</h1>
+    <ul>
+        {% for file in files %}
+        <li>
+            <div class="link">
+                <a href="{{ file.url }}?dl=0">
+                    {{ file.name }}
+                </a> 
+            </div>
+            <div class="download">
+                <a href="{{ file.url }}?dl=1" download class="download">
+                    Download · {{ file.size }}
+                </a>
+            </div>
+        </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

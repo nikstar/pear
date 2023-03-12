@@ -1,0 +1,11 @@
+version: '3'
+
+services:
+  pear:
+    build: .
+    environment:
+      APP_ROOT: /myapp
+    volumes:
+      - /path/to/data:/data
+    ports:
+      - "5000:5000"
