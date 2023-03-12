@@ -3,6 +3,7 @@ version: '3'
 services:
   pear:
     build: .
+    container_name: pear
     environment:
       APP_ROOT: /myapp
     volumes:

@@ -4,7 +4,7 @@ WORKDIR /app
 COPY requirements.txt .
 RUN pip install -r requirements.txt
 
-COPY static/ templates/ app.py /app/
+COPY . /app
 
 ENV FILE_ROOT="/data"
 ENV APP_ROOT="/myapp"
