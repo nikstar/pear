@@ -3,11 +3,12 @@ import io
 import os
 import zipfile
 
-app = Flask(__name__)
 FILE_ROOT = "/data"
 APP_ROOT = os.environ.get("APP_ROOT", default="/")
 if APP_ROOT == "" or APP_ROOT[-1] != "/":
     APP_ROOT = APP_ROOT + "/"
+
+app = Flask(__name__, static_url_path=APP_ROOT+"static")
 
 @app.route(APP_ROOT)
 @app.route(APP_ROOT+'<path:path>')
