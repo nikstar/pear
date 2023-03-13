@@ -1,6 +1,22 @@
 html {
   font-family: 'JetBrains Mono', monospace;
   font-size: 16px;
+  --link-color: #111;
+  --link-hover-color: #f2f2f2;
+  --border-color: #ddd;
+  --download-color: #007bff;
+  --download-hover-color: #0069d9;
+}
+
+@media screen and (prefers-color-scheme: dark) {
+  html {
+    color-scheme: dark;
+    --link-color: #eee;
+    --link-hover-color: #151515;
+    --border-color: #222;
+    --download-color: #0069d9; 
+    --download-hover-color: #007bff;
+  }
 }
 
 body {
@@ -24,7 +40,7 @@ li {
   align-items: center;
   width: 100%;
   box-sizing: border-box;
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid var(--border-color);
 }
 
 .link {
@@ -36,12 +52,12 @@ li {
 .link a {
   display: block;
   padding: 1rem;
-  color: #333;
+  color: var(--link-color);
   text-decoration: none;
 }
 
 .link a:hover {
-  background-color: #f2f2f2;
+  background-color: var(--link-hover-color);
 }
 
 .download {
@@ -55,7 +71,7 @@ li {
   align-items: center;
   justify-content: center;
   padding: 0.5rem 0.5rem;
-  background-color: #007bff;
+  background-color: var(--download-color);
   color: #fff;
   text-decoration: none;
   border-radius: 0.5rem;
@@ -65,10 +81,10 @@ li {
 }
 
 .download a:hover {
-  background-color: #0069d9;
+  background-color: var(--download-hover-color);
 }
 
-@media only screen and (max-width: 600px) {
+@media screen and (max-width: 600px) {
   .download {
     width: 5.5rem;
   }
