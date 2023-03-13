@@ -3,7 +3,7 @@ import io
 import os
 import zipfile
 
-FILE_ROOT = os.environ.get("FILE_ROOT", default="/data")
+FILE_ROOT = os.environ.get("FILE_ROOT", default=".")
 APP_ROOT = os.environ.get("APP_ROOT", default="/")
 if APP_ROOT == "" or APP_ROOT[-1] != "/":
     APP_ROOT = APP_ROOT + "/"

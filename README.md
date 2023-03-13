@@ -13,11 +13,11 @@ pip install -r requirements.txt
 flask run # or python app.py
 ```
 
-This will start the server and you can access it by going to http://localhost:5000/ in your web browser.
+This will start the server and you can access it by going to <http://localhost:5000/> in your web browser.
 
 ## Usage
 
-By default, Pear serves files from the /data directory. You can change this by setting the FILE_ROOT environment variable.
+By default, Pear serves files from the current directory. You can change this by setting the FILE_ROOT environment variable.
 
 ```sh
 export FILE_ROOT=/path/to/your/files
@@ -83,9 +83,7 @@ Start the container with docker-compose.
 docker-compose up
 ```
 
-This will start Pear on port 5001 and you can access it by going to http://localhost:5001/myapp in your web browser.
-
-Note that you can customize the environment variables, volumes, and external port to fit your needs.
+This will start Pear on port 5001 and you can access it by going to <http://localhost:5001/myapp> in your web browser.
 
 ## License
 
