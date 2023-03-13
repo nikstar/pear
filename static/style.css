@@ -64,3 +64,13 @@ li {
 .download a:hover {
   background-color: #0069d9;
 }
+
+@media only screen and (max-width: 600px) {
+  .download {
+    width: 5.5rem;
+  }
+  
+  .download a span.text {
+    display: none;
+  }  
+}

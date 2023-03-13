@@ -12,13 +12,13 @@
         {% for file in files %}
         <li>
             <div class="link">
-                <a href="{{ file.url }}?dl=0">
+                <a href="{{ file.url }}">
                     {{ file.name }}
                 </a> 
             </div>
             <div class="download">
                 <a href="{{ file.url }}?dl=1" download class="download">
-                    Download · {{ file.size }}
+                    <span class="text">Download ·&nbsp;</span>{{ file.size }}
                 </a>
             </div>
         </li>
