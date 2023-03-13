@@ -1,7 +1,7 @@
-from flask import Flask, render_template, send_file, request, abort, url_for
 import io
 import os
 import zipfile
+from flask import Flask, abort, render_template, request, send_file, send_from_directory, url_for
 
 FILE_ROOT = os.environ.get("FILE_ROOT", default=".")
 APP_ROOT = os.environ.get("APP_ROOT", default="/")
@@ -21,7 +21,7 @@ def index(path=''):
     wants_download = bool(request.args.get("dl", default=0, type=int))
     
     if os.path.isfile(os_path):
-        return send_file(os_path, as_attachment=wants_download)
+        return send_from_directory(FILE_ROOT, path, as_attachment=wants_download)
     
     if wants_download:
         return _zip_and_download(path, os_path)
@@ -43,7 +43,7 @@ def _render_listing(dir, os_dir):
 
 def _zip_and_download(dir: str, os_dir: str):
     buffer = io.BytesIO()
-    with zipfile.ZipFile(buffer, 'w', zipfile.ZIP_DEFLATED) as zip_file:
+    with zipfile.ZipFile(buffer, 'w', zipfile.ZIP_STORED) as zip_file:
         for root, _, files in os.walk(os_dir):
             for file in files:
                 file_path = os.path.join(root, file)
